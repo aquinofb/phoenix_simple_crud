@@ -1,0 +1,10 @@
+<p>
+  <b>ID:</b> <%= @product.id %>
+</p>
+
+<p>
+  <b>Name:</b> <%= @product.name %>
+</p>
+
+<%= link "Edit", to: products_path(@conn, :edit, @product) %> | 
+<%= link "Back", to: products_path(@conn, :index) %>
