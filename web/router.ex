@@ -19,6 +19,7 @@ defmodule Crud.Router do
     get "/", PageController, :index
 
     resources "/products", ProductsController
+    resources "/posts", PostsController
   end
 
   # Other scopes may use custom stacks.

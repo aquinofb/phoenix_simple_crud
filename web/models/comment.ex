@@ -1,15 +1,14 @@
-defmodule Crud.Product do
+defmodule Crud.Comment do
   use Crud.Web, :model
 
-  alias Crud.Repo
-
-  schema "products" do
-    field :name, :string
+  schema "comments" do
+    field :content, :string
+    belongs_to :post, Crud.Post
 
     timestamps
   end
 
-  @required_fields ~w(name)
+  @required_fields ~w(content)
   @optional_fields ~w()
 
   @doc """
@@ -21,6 +20,7 @@ defmodule Crud.Product do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> validate_length(:name, min: 2)
+    |> validate_length(:content, min: 2)
+    |> validate_length(:content, max: 140)
   end
 end
