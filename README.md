@@ -1,4 +1,4 @@
-# Crud
+# Simple Crud
 
 To start your Phoenix app:
 
